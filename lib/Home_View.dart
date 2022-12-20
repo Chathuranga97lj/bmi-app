@@ -11,9 +11,12 @@ class _BMIViewState extends State<BMIView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white12,
       appBar: AppBar(
-        title: Center(child: Text('Home')),
-        backgroundColor: Colors.purpleAccent,
+        title: Text('BMI Calculator'),
+        centerTitle: true,
+        backgroundColor: Color(0xFF04040C),
+        leading: Icon(Icons.menu),  // left side component >> items, right side >> actions
       ),
     );
   }

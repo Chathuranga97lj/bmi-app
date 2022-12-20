@@ -71,6 +71,7 @@ class _BMIViewState extends State<BMIView> {
               ],
             ),
           ),
+          Spacer(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Container(
@@ -101,6 +102,7 @@ class _BMIViewState extends State<BMIView> {
               ),
             ),
           ),
+          Spacer(),
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Row(

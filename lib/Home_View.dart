@@ -75,13 +75,13 @@ class _BMIViewState extends State<BMIView> {
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Container(
               color: Colors.white12,
-              height: 180,
+              height: 170,
               width: double.infinity,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
-                    'WEIGHT',
+                    'HEIGHT',
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                   Text(
@@ -91,10 +91,118 @@ class _BMIViewState extends State<BMIView> {
                         fontSize: 25,
                         fontWeight: FontWeight.bold),
                   ),
-                  Slider(value: 183, onChanged: (value){}, min: 0, max: 200,)
+                  Slider(
+                    value: 183,
+                    onChanged: (value) {},
+                    min: 0,
+                    max: 200,
+                  )
                 ],
               ),
             ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    color: Colors.white12,
+                    height: 170,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          'WEIGHT',
+                          style: TextStyle(color: Colors.white, fontSize: 20),
+                        ),
+                        Text(
+                          '74',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 40,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            CircleAvatar(
+                              backgroundColor: Colors.black54,
+                              radius: 30,
+                              child: Icon(
+                                Icons.remove,
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(width: 10,),
+                            CircleAvatar(
+                              backgroundColor: Colors.black54,
+                              radius: 30,
+                              child: Icon(
+                                Icons.add,
+                                color: Colors.white,
+                              ),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(width: 10,),
+                Expanded(
+                  child: Container(
+                    color: Colors.white12,
+                    height: 170,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          'WEIGHT',
+                          style: TextStyle(color: Colors.white, fontSize: 20),
+                        ),
+                        Text(
+                          '74',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 40,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            CircleAvatar(
+                              backgroundColor: Colors.black54,
+                              radius: 30,
+                              child: Icon(
+                                Icons.remove,
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(width: 10,),
+                            CircleAvatar(
+                              backgroundColor: Colors.black54,
+                              radius: 30,
+                              child: Icon(
+                                Icons.add,
+                                color: Colors.white,
+                              ),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+          Spacer(),
+          Container(
+            color: Colors.pink,
+            width: double.infinity,
+            height: 50,
+            child: Center(child: Text('Calculate your BMI', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),)),
           )
         ],
       ),

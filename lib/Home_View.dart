@@ -45,7 +45,9 @@ class _BMIViewState extends State<BMIView> {
                     ),
                   ),
                 ),
-                SizedBox(width: 10,),
+                SizedBox(
+                  width: 10,
+                ),
                 Expanded(
                   child: Container(
                     color: Colors.white12,
@@ -67,6 +69,31 @@ class _BMIViewState extends State<BMIView> {
                   ),
                 )
               ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Container(
+              color: Colors.white12,
+              height: 180,
+              width: double.infinity,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(
+                    'WEIGHT',
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                  Text(
+                    '183 cm',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  Slider(value: 183, onChanged: (value){}, min: 0, max: 200,)
+                ],
+              ),
             ),
           )
         ],

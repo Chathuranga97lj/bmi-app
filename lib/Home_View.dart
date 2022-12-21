@@ -26,11 +26,11 @@ class _BMIViewState extends State<BMIView> {
             padding: const EdgeInsets.all(10.0),
             child: Row(
               children: [
-                GenderComponent(Icons.male, 'MALE'),
+                GenderComponent(icon: Icons.male, name: 'MALE'),
                 SizedBox(
                   width: 10,
                 ),
-                GenderComponent(Icons.female, 'FEMALE')
+                GenderComponent(icon: Icons.female, name: 'FEMALE')
               ],
             ),
           ),

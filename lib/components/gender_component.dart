@@ -4,7 +4,7 @@ class GenderComponent extends StatelessWidget {
   IconData icon;
   String name;
 
-  GenderComponent(this.icon, this.name); // constructor for icon and name
+  GenderComponent({required this.icon, required this.name}); // constructor for icon and name
 
   @override
   Widget build(BuildContext context) {

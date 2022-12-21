@@ -1,3 +1,4 @@
+import 'package:bmi_app/components/gender_component.dart';
 import 'package:flutter/material.dart';
 
 class BMIView extends StatefulWidget {
@@ -25,49 +26,11 @@ class _BMIViewState extends State<BMIView> {
             padding: const EdgeInsets.all(10.0),
             child: Row(
               children: [
-                Expanded(
-                  child: Container(
-                    color: Colors.white12,
-                    height: 170,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Icon(
-                          Icons.male,
-                          color: Colors.white,
-                          size: 80,
-                        ),
-                        Text(
-                          'MALE',
-                          style: TextStyle(color: Colors.white, fontSize: 25),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
+                GenderComponent(Icons.male, 'MALE'),
                 SizedBox(
                   width: 10,
                 ),
-                Expanded(
-                  child: Container(
-                    color: Colors.white12,
-                    height: 170,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Icon(
-                          Icons.female,
-                          color: Colors.white,
-                          size: 80,
-                        ),
-                        Text(
-                          'FEMALE',
-                          style: TextStyle(color: Colors.white, fontSize: 25),
-                        )
-                      ],
-                    ),
-                  ),
-                )
+                GenderComponent(Icons.female, 'FEMALE')
               ],
             ),
           ),
@@ -136,7 +99,9 @@ class _BMIViewState extends State<BMIView> {
                                 color: Colors.white,
                               ),
                             ),
-                            SizedBox(width: 10,),
+                            SizedBox(
+                              width: 10,
+                            ),
                             CircleAvatar(
                               backgroundColor: Colors.black54,
                               radius: 30,
@@ -151,7 +116,9 @@ class _BMIViewState extends State<BMIView> {
                     ),
                   ),
                 ),
-                SizedBox(width: 10,),
+                SizedBox(
+                  width: 10,
+                ),
                 Expanded(
                   child: Container(
                     color: Colors.white12,
@@ -181,7 +148,9 @@ class _BMIViewState extends State<BMIView> {
                                 color: Colors.white,
                               ),
                             ),
-                            SizedBox(width: 10,),
+                            SizedBox(
+                              width: 10,
+                            ),
                             CircleAvatar(
                               backgroundColor: Colors.black54,
                               radius: 30,
@@ -203,8 +172,13 @@ class _BMIViewState extends State<BMIView> {
           Container(
             color: Colors.pink,
             width: double.infinity,
-            height: 50,
-            child: Center(child: Text('Calculate your BMI', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),)),
+            height: 60,
+            child: Center(
+                child: Text(
+              'Calculate your BMI',
+              style:
+                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
+            )),
           )
         ],
       ),

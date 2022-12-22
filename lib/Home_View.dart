@@ -40,7 +40,9 @@ class _BMIViewState extends State<BMIView> {
           Spacer(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: HeightComponent(height: (h){}),
+            child: HeightComponent(height: (h){
+              print(h);
+            }),
           ),
           Spacer(),
           Padding(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class HeightComponent extends StatefulWidget {
-  Function(int) height;
+  Function(double) height;
 
   HeightComponent({required this.height});
 
@@ -34,6 +34,7 @@ class _HeightComponentState extends State<HeightComponent> {
           Slider(
             value: value,
             onChanged: (v) {
+              widget.height(v);
               setState(() {
                 value = v;
               });

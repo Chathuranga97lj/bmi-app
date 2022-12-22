@@ -1,5 +1,8 @@
 import 'package:bmi_app/components/gender_component.dart';
+import 'package:bmi_app/components/height_component.dart';
 import 'package:flutter/material.dart';
+
+import 'components/height_component.dart';
 
 class BMIView extends StatefulWidget {
   const BMIView({Key? key}) : super(key: key);
@@ -37,33 +40,7 @@ class _BMIViewState extends State<BMIView> {
           Spacer(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: Container(
-              color: Colors.white12,
-              height: 170,
-              width: double.infinity,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text(
-                    'HEIGHT',
-                    style: TextStyle(color: Colors.white, fontSize: 20),
-                  ),
-                  Text(
-                    '183 cm',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  Slider(
-                    value: 183,
-                    onChanged: (value) {},
-                    min: 0,
-                    max: 200,
-                  )
-                ],
-              ),
-            ),
+            child: HeightComponent(height: (h){}),
           ),
           Spacer(),
           Padding(

@@ -11,6 +11,7 @@ class HeightComponent extends StatefulWidget {
 
 class _HeightComponentState extends State<HeightComponent> {
   double value = 150;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,9 +28,7 @@ class _HeightComponentState extends State<HeightComponent> {
           Text(
             '${value.toStringAsFixed(0)} cm',
             style: TextStyle(
-                color: Colors.white,
-                fontSize: 25,
-                fontWeight: FontWeight.bold),
+                color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),
           ),
           Slider(
             value: value,

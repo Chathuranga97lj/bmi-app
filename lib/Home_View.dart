@@ -1,5 +1,6 @@
 import 'package:bmi_app/components/gender_component.dart';
 import 'package:bmi_app/components/height_component.dart';
+import 'package:bmi_app/components/value_component.dart';
 import 'package:flutter/material.dart';
 
 import 'components/height_component.dart';
@@ -12,6 +13,10 @@ class BMIView extends StatefulWidget {
 }
 
 class _BMIViewState extends State<BMIView> {
+  double height = 0;
+  int weight = 0;
+  int age = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,8 +45,8 @@ class _BMIViewState extends State<BMIView> {
           Spacer(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: HeightComponent(height: (h){
-              print(h);
+            child: HeightComponent(height: (value) {
+              height = value;
             }),
           ),
           Spacer(),
@@ -49,115 +54,36 @@ class _BMIViewState extends State<BMIView> {
             padding: const EdgeInsets.all(10.0),
             child: Row(
               children: [
-                Expanded(
-                  child: Container(
-                    color: Colors.white12,
-                    height: 170,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text(
-                          'WEIGHT',
-                          style: TextStyle(color: Colors.white, fontSize: 20),
-                        ),
-                        Text(
-                          '74',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 40,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            CircleAvatar(
-                              backgroundColor: Colors.black54,
-                              radius: 30,
-                              child: Icon(
-                                Icons.remove,
-                                color: Colors.white,
-                              ),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            CircleAvatar(
-                              backgroundColor: Colors.black54,
-                              radius: 30,
-                              child: Icon(
-                                Icons.add,
-                                color: Colors.white,
-                              ),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                ),
+                ValueComponent(data: (value ) {
+                  weight = value;
+                }, title: 'WEIGHT', value: 50,),
                 SizedBox(
                   width: 10,
                 ),
-                Expanded(
-                  child: Container(
-                    color: Colors.white12,
-                    height: 170,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text(
-                          'WEIGHT',
-                          style: TextStyle(color: Colors.white, fontSize: 20),
-                        ),
-                        Text(
-                          '74',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 40,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            CircleAvatar(
-                              backgroundColor: Colors.black54,
-                              radius: 30,
-                              child: Icon(
-                                Icons.remove,
-                                color: Colors.white,
-                              ),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            CircleAvatar(
-                              backgroundColor: Colors.black54,
-                              radius: 30,
-                              child: Icon(
-                                Icons.add,
-                                color: Colors.white,
-                              ),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                )
+                ValueComponent(data: (value) {
+                  age = value;
+                }, title: 'AGE', value: 20,)
               ],
             ),
           ),
           Spacer(),
-          Container(
-            color: Colors.pink,
-            width: double.infinity,
-            height: 60,
-            child: Center(
-                child: Text(
-              'Calculate your BMI',
-              style:
-                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
-            )),
+          InkWell(
+            onTap: (){
+              print('Height- $height, Weight- $weight, Age- $age');
+            },
+            child: Container(
+              color: Colors.pink,
+              width: double.infinity,
+              height: 60,
+              child: Center(
+                  child: Text(
+                'Calculate your BMI',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20),
+              )),
+            ),
           )
         ],
       ),

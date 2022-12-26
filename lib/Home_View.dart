@@ -3,8 +3,6 @@ import 'package:bmi_app/components/height_component.dart';
 import 'package:bmi_app/components/value_component.dart';
 import 'package:flutter/material.dart';
 
-import 'components/height_component.dart';
-
 class BMIView extends StatefulWidget {
   const BMIView({Key? key}) : super(key: key);
 
@@ -16,6 +14,8 @@ class _BMIViewState extends State<BMIView> {
   double height = 0;
   int weight = 0;
   int age = 0;
+  bool male = false;
+  bool female = false;
 
   @override
   Widget build(BuildContext context) {
@@ -34,11 +34,28 @@ class _BMIViewState extends State<BMIView> {
             padding: const EdgeInsets.all(10.0),
             child: Row(
               children: [
-                GenderComponent(icon: Icons.male, name: 'MALE'),
+                GenderComponent(icon: Icons.male, name: 'MALE', male: male, female: female,
+                  gender: (value) {
+                    setState((){
+                      male = value;
+                      female = false;
+                      print("Home male, male: $male , female: $female");
+                    });
+                },
+                ),
                 SizedBox(
                   width: 10,
                 ),
-                GenderComponent(icon: Icons.female, name: 'FEMALE')
+                GenderComponent(icon: Icons.female, name: 'FEMALE', male: male, female: female,
+                  gender: (value) {
+                  setState((){
+                    female = value;
+                    male = false;
+                    print("Home female, male: $male , female: $female");
+                  });
+
+                },
+                )
               ],
             ),
           ),
@@ -70,6 +87,7 @@ class _BMIViewState extends State<BMIView> {
           InkWell(
             onTap: (){
               print('Height- $height, Weight- $weight, Age- $age');
+
             },
             child: Container(
               color: Colors.pink,
